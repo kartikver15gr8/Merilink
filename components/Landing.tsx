@@ -5,6 +5,8 @@ import Reveal from "./Reveal";
 import DemoBanner from "./DemoBanner";
 import ReviewsTile from "./ReviewsTile";
 import Footer from "./Footer";
+import Features from "./Features";
+import FeaturedIn from "./FeaturedIn";
 
 export default function Landing() {
   return (
@@ -16,6 +18,8 @@ export default function Landing() {
           <Rightpane />
         </div>
         <DemoBanner />
+        <Features />
+        <FeaturedIn />
         <ReviewsTile />
         <Footer />
       </div>

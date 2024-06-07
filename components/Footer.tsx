@@ -34,6 +34,10 @@ export default function Footer() {
           alt=""
         />
       </div>
+      <div className="h-1 w-[80%] bg-slate-300 mt-10"></div>
+      <div className="h-20 flex justify-center items-center">
+        <p>© 2024 Meril.ink pvt ltd | All Rights Reserved</p>
+      </div>
     </div>
   );
 }
