@@ -1,9 +1,11 @@
+import Landing from "@/components/Landing";
+import Maintitle from "@/components/Maintitle";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="text-7xl flex justify-center items-center w-full min-h-screen">
-      Meril.ink
+    <div className="">
+      <Landing />
     </div>
   );
 }
