@@ -14,6 +14,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "global-uploads.webflow.com",
       },
+      {
+        protocol: "https",
+        hostname: "i.pinimg.com",
+      },
     ],
   },
 };

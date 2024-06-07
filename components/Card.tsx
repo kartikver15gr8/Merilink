@@ -41,10 +41,13 @@ export default function Card({
           <p className="text-sm font-bold">{handle}</p>
           <p className="">{date}</p>
         </div>
+        <Button className={`${btnColor} mt-2 h-8 rounded-full`}>
+          {btnText}
+        </Button>
       </div>
-      <Button className={`${btnColor} mt-2 h-8 rounded-full`}>{btnText}</Button>
+
       {bottomImg && bottomImgH && bottomImgW && (
-        <div className="mt-2">
+        <div className="mt-2 p-1">
           <Image
             className="rounded-lg shadow-xl border-slate-300 border"
             src={bottomImg}

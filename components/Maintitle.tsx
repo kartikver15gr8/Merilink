@@ -26,7 +26,7 @@ export default function Maintitle() {
         <Button className="text-white font-bold text-lg w-72 h-14 rounded-xl hover:scale-105 transition-all duration-300">
           Create your Merilink
         </Button>
-        <Link href="">
+        <Link href="/login">
           <p className="my-4 text-lg">login</p>
         </Link>
       </div>
