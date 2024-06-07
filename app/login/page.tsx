@@ -16,9 +16,7 @@ export default function page() {
         </Link>
         <div className="w-[450px]">
           <div className="mb-20">
-            <Link href="/">
-              <p className="text-3xl font-bold my-2">Log in to Merilink</p>
-            </Link>
+            <p className="text-3xl font-bold my-2">Log in to Merilink</p>
             <p className="text-slate-600 text-lg">Good to have you back!</p>
           </div>
           <div className="">
@@ -118,7 +116,7 @@ export default function page() {
             imgUrl="https://imgs.search.brave.com/nK8QIJwqTpOiYIRcE2Q2kCu1MkKRZd20_3cFLzmxPVk/rs:fit:860:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy8x/LzE5L1Nwb3RpZnlf/bG9nb193aXRob3V0/X3RleHQuc3Zn.svg"
             imgBg="bg-white"
             title="Spotify"
-            btnText="Follow"
+            btnText="Play"
             btnColor="bg-green-600"
             date=""
             handle="@kartikeyverma"
