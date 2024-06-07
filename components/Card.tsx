@@ -32,7 +32,7 @@ export default function Card({
     >
       <div className="">
         <div
-          className={`${imgBg} w-12 h-12 bg-yellow-100 rounded-xl shadow-lg flex items-center justify-center`}
+          className={`${imgBg} w-12 h-12 bg-white rounded-xl shadow-lg flex items-center justify-center`}
         >
           <Image className="" src={imgUrl} alt="" width={30} height={30} />
         </div>
