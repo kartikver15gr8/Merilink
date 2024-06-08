@@ -27,13 +27,22 @@ export default function Maintitle() {
       </div>
 
       <div className="flex flex-col  items-center">
-        <Button className="text-white font-bold text-lg w-72 h-14 rounded-xl hover:scale-105 transition-all duration-300">
-          Create your Merilink
-        </Button>
+        <Link href="/createhandle">
+          <Button className="text-white font-bold text-lg w-72 h-14 rounded-xl hover:scale-105 transition-all duration-300">
+            Create your Merilink
+          </Button>
+        </Link>
         {!user && (
           <Link href="/login">
             <p className="my-4 text-lg hover:scale-110 translate-all duration-300">
               login
+            </p>
+          </Link>
+        )}
+        {user && (
+          <Link href="/login">
+            <p className="my-4 text-lg hover:scale-110 translate-all duration-300">
+              Welcome back {user} 👋🏼
             </p>
           </Link>
         )}
