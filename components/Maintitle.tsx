@@ -1,10 +1,14 @@
+"use client";
 import Merilink from "@/public/Merilink.png";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import Reveal from "./Reveal";
+import { useSession } from "next-auth/react";
 
 export default function Maintitle() {
+  const session = useSession();
+  const user = session.data?.user?.name;
   return (
     <div className=" w-[50%]">
       <div className="flex flex-col justify-center items-center mt-32">
@@ -26,11 +30,13 @@ export default function Maintitle() {
         <Button className="text-white font-bold text-lg w-72 h-14 rounded-xl hover:scale-105 transition-all duration-300">
           Create your Merilink
         </Button>
-        <Link href="/login">
-          <p className="my-4 text-lg hover:scale-110 translate-all duration-300">
-            login
-          </p>
-        </Link>
+        {!user && (
+          <Link href="/login">
+            <p className="my-4 text-lg hover:scale-110 translate-all duration-300">
+              login
+            </p>
+          </Link>
+        )}
       </div>
     </div>
   );
