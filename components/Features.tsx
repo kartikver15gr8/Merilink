@@ -11,8 +11,8 @@ export default function Features() {
       </div>
       <div className="flex mt-20">
         <div className="w-[350px] flex-col h-[400px] bg-slate-100 border-slate-200 border mx-4 rounded-2xl shadow-xl hover:scale-105 transition-all duration-300 items-center flex">
-          <div className="w-72 rounded-full flex items-center justify-center text-xl mt-20 bg-black h-20">
-            <p className="font-bold text-white">meril.ink/me</p>
+          <div className="w-72 rounded-full flex items-center justify-center text-xl mt-20 bg-black h-20 hover:scale-105 transition-all duration-300">
+            <p className="font-bold text-white ">meril.ink/me</p>
           </div>
           <div className="w-72 flex-col rounded-full flex items-center justify-center text-lg  mt-20 h-20">
             <p>Share your in link bio seamlessly</p>
@@ -20,7 +20,7 @@ export default function Features() {
           </div>
         </div>
         <div className="w-[350px] flex-col h-[400px] bg-slate-100 border-slate-200 border mx-4 rounded-2xl shadow-xl hover:scale-105 transition-all duration-300 items-center pt-16 flex">
-          <div className="w-64 rounded-full flex items-center  text-xl my-1 bg-sky-300 h-16">
+          <div className="w-64 rounded-full flex items-center  text-xl my-1 bg-sky-300 h-16 hover:scale-105 transition-all duration-300">
             <svg
               className="w-10 mx-4"
               xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +33,7 @@ export default function Features() {
             </svg>
             <p className="w-20 h-[14px] rounded-full bg-blue-400"></p>
           </div>
-          <div className="w-64 rounded-full flex items-center  text-xl my-1 bg-slate-300 h-16">
+          <div className="w-64 rounded-full flex items-center  text-xl my-1 bg-slate-300 h-16 hover:scale-105 transition-all duration-300">
             <svg
               className="w-10 mx-4"
               xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +53,7 @@ export default function Features() {
             </svg>
             <p className="w-20 h-[14px] rounded-full bg-slate-400"></p>
           </div>
-          <div className="w-64 rounded-full flex items-center  text-xl my-1 bg-red-300 h-16">
+          <div className="w-64 rounded-full flex items-center  text-xl my-1 bg-red-300 h-16 hover:scale-105 transition-all duration-300">
             <svg
               className="mx-4 w-10"
               xmlns="http://www.w3.org/2000/svg"
@@ -76,13 +76,13 @@ export default function Features() {
 
         <div className="w-[350px] flex-col h-[400px] bg-slate-100 border-slate-200 border mx-4 rounded-2xl shadow-xl hover:scale-105 transition-all duration-300 items-center pt-16 flex">
           <div className="flex mb-20">
-            <div className="bg-sky-500 w-20 h-20 rounded-xl mx-1 flex justify-center items-center text-white font-bold">
+            <div className="bg-sky-500 w-20 h-20 rounded-xl mx-1 flex justify-center items-center text-white font-bold hover:scale-105 transition-all duration-300">
               <p>8</p>
             </div>
-            <div className="bg-violet-300 w-20 h-20 rounded-full mx-1 flex justify-center items-center text-white font-bold">
+            <div className="bg-violet-300 w-20 h-20 rounded-full mx-1 flex justify-center items-center text-white font-bold hover:scale-105 transition-all duration-300">
               <p>Jun</p>
             </div>
-            <div className="bg-blue-500 w-20 h-20 rounded-xl mx-1  flex justify-center items-center text-white font-bold">
+            <div className="bg-blue-500 w-20 h-20 rounded-xl mx-1  flex justify-center items-center text-white font-bold hover:scale-105 transition-all duration-300">
               <p>2:44am</p>
             </div>
           </div>
