@@ -5,11 +5,11 @@ export default function Features() {
   return (
     <div className="flex flex-col p-10 justify-center items-center h-[700px]">
       <div className="flex justify-center w-[80%]">
-        <p className="text-5xl font-bold">
+        <p className="text-3xl font-bold sm:text-3xl md:text-4xl lg:text:5xl xl:text-5xl 2xl:text-5xl">
           A quick, seamless and powerful link in bio
         </p>
       </div>
-      <div className="flex mt-20">
+      <div className="flex  mt-20">
         <div className="w-[350px] flex-col h-[400px] bg-slate-100 border-slate-200 border mx-4 rounded-2xl shadow-xl hover:scale-105 transition-all duration-300 items-center flex">
           <div className="w-72 rounded-full flex items-center justify-center text-xl mt-20 bg-black h-20 hover:scale-105 transition-all duration-300">
             <p className="font-bold text-white ">meril.ink/me</p>
