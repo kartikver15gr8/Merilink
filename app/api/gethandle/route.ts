@@ -2,7 +2,7 @@ import { NextRequest } from "next/server";
 import { prisma } from "@/db";
 import { getServerSession } from "next-auth";
 
-export default async function POST(req: NextRequest) {
+export async function POST(req: NextRequest) {
   const session = await getServerSession();
   const { userhandle } = await req.json();
 
