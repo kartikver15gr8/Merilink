@@ -7,6 +7,7 @@ import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import Merilink from "@/public/Merilink.png";
 
 export default function Handle({ params }: any) {
   const [handle, setHandle] = useState(params.handle);
@@ -56,19 +57,7 @@ export default function Handle({ params }: any) {
         </div>
         <div className="flex p-1 shadow-lg border w-fit rounded-lg items-center">
           <div className="m-1 flex justify-center items-center w-10 h-10 border shadow-lg rounded-lg hover:bg-slate-300 transition-all duration-500">
-            <svg
-              className="w-8"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 21 21"
-            >
-              <path
-                fill="none"
-                stroke="#64758B"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m9.5 7.5l1-1a2.828 2.828 0 1 1 4 4l-1 1m-3 3l-1 1a2.828 2.828 0 1 1-4-4l1-1m1 3l5-5"
-              />
-            </svg>
+            <Image src={Merilink} width={30} height={30} alt="" />
           </div>
           {/* <div className="m-1 w-10 h-10 flex justify-center items-center border shadow-lg rounded-lg hover:bg-slate-300 transition-all duration-500"></div>
           <div className="m-1 w-10 h-10 flex justify-center items-center border shadow-lg rounded-lg hover:bg-slate-300 transition-all duration-500"></div> */}

@@ -61,10 +61,6 @@ export default function CreateHandle() {
               </Button>
             </div>
           </div>
-
-          <Link href="/signup">
-            <p className="text-slate-600 mt-3">or Login</p>
-          </Link>
         </div>
       </div>
       <div className="w-[50%] justify-center items-center flex p-10 ">

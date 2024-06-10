@@ -15,8 +15,8 @@ export async function POST(req: NextRequest) {
   });
 
   if (handle) {
-    return Response.json({ message: "handle exists", status: true });
+    return Response.json({ message: "already exists", status: true });
   }
 
-  return Response.json({ message: "handle doesn't exist", status: false });
+  return Response.json({ message: "you can use this handle", status: false });
 }
