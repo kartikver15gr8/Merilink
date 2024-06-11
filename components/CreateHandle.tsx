@@ -8,9 +8,37 @@ import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { toast } from "sonner";
 import axios from "axios";
+import { redirect } from "next/navigation";
 
 export default function CreateHandle() {
+  const [hidden, setHidden] = useState("hidden");
   const [handle, setHandle] = useState("");
+  const [isCreated, setIsCreated] = useState(false);
+  if (isCreated) {
+    redirect("/addlinks");
+  }
+
+  const createhandle = async () => {
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/api/createhandle",
+        {
+          handle: handle,
+        }
+      );
+      console.log(handle);
+
+      console.log(response.data);
+      toast(JSON.stringify(response.data.msg));
+      if (response.data.msg) {
+        setIsCreated(true);
+      }
+
+      return response.data;
+    } catch (error) {
+      return error;
+    }
+  };
 
   const checkhandle = async () => {
     try {
@@ -22,7 +50,14 @@ export default function CreateHandle() {
       );
 
       console.log(response.data);
+      console.log(response.data.status);
+
       toast(JSON.stringify(response.data.message));
+      if (response.data.status == true) {
+        setHidden("hidden");
+      } else {
+        setHidden("");
+      }
 
       return response.data;
     } catch (error) {
@@ -32,7 +67,7 @@ export default function CreateHandle() {
 
   return (
     <div className="flex p-10 h-[100vh]">
-      <div className="w-[50%] p-10 flex flex-col justify-center">
+      <div className="w-[50%] p-5 pl-10 flex flex-col justify-center ">
         <Link href="/" className="mb-10">
           <Logo />
         </Link>
@@ -55,9 +90,15 @@ export default function CreateHandle() {
               ></Input>
               <Button
                 onClick={checkhandle}
-                className="w-20 h-14 text-white hover:bg-blue-700 transition-all duration-300"
+                className="w-20 h-14 rounded-xl text-white hover:bg-blue-700 transition-all duration-300"
               >
                 check
+              </Button>
+              <Button
+                onClick={createhandle}
+                className={`w-20 h-14 ${hidden} rounded-xl  ml-2 text-white bg-green-600 hover:bg-green-700 transition-all duration-300`}
+              >
+                create
               </Button>
             </div>
           </div>
