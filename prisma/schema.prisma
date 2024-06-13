@@ -33,7 +33,7 @@ model User {
 model Links {
   id          Int     @id @default(autoincrement())
   user        User    @relation(fields: [userId], references: [id])
-  userId      String
+  userId      String  @unique
   userHandle  String? @unique
   instagram   String? @unique
   twitter     String? @unique
