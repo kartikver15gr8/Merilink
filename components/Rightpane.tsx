@@ -13,7 +13,7 @@ export default function Rightpane() {
           btnText="subscribe"
           btnColor="bg-orange-800"
           date="Fri 7 Jun"
-          handle="@KartikeyStack"
+          handle="@kartikeyverma"
           bottomImg="https://imgs.search.brave.com/ZCy5FWgn1OX1WtqWGXFV__2ljeskkOi1vQX083-sFfI/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9zdWJz/dGFja2NvdXJzZS5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MjQvMDIvSG93LXRv/LVVzZS1JbWFnZXMt/YW5kLUdyYXBoaWNz/LWluLVN1YnN0YWNr/LU5ld3NsZXR0ZXIu/cG5n"
           bottomImgW={200}
           bottomImgH={50}
@@ -26,7 +26,7 @@ export default function Rightpane() {
           btnText="Follow"
           btnColor="bg-black"
           date=""
-          handle="@kartikver15gr8"
+          handle="@antfu"
           bottomImg=""
         />
         {/* <Card

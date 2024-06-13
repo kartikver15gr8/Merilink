@@ -22,7 +22,7 @@ export default function Leftpane() {
         btnText="Follow"
         btnColor="bg-red-600"
         date=""
-        handle="@kartikeyverma"
+        handle="@harkirat1"
         bottomImg=""
       />
       <Card
@@ -33,7 +33,7 @@ export default function Leftpane() {
         btnText="Follow"
         btnColor="bg-blue-600"
         date=""
-        handle="@kartikeyverma"
+        handle="@narendramodi"
         bottomImg=""
       />
     </div>
