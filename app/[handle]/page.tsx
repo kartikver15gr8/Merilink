@@ -11,6 +11,7 @@ import Merilink from "@/public/Merilink.png";
 import SocialCard from "@/components/SocialCard";
 import Link from "next/link";
 import React from "react";
+import { toast } from "sonner";
 
 type UserType = {
   id: string;
@@ -23,6 +24,7 @@ type UserType = {
   name: string | null;
   avatar: string | null;
   profilehandle: string | null;
+  bio: string | null;
 };
 
 type LinksType = {
@@ -48,6 +50,22 @@ export default function Handle({ params }: any) {
   const [status, setStatus] = useState("");
   const [user, setUser] = useState<UserType | null>(null);
   const [userLinks, setUserLinks] = useState<LinksType | null>(null);
+  const [bioactive, setBioActive] = useState(false);
+  const [bio, setBio] = useState("");
+  const [bg, setBg] = useState("");
+
+  const updateBioHandler = async () => {
+    try {
+      const response = await axios.post("http://localhost:3000/api/updatebio", {
+        newBio: bio,
+      });
+      console.log(response.data);
+      window.location.reload();
+      return response.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const session = useSession();
   const useremail = session?.data?.user?.email;
@@ -74,7 +92,7 @@ export default function Handle({ params }: any) {
   }, [user, userLinks]);
 
   return (
-    <div className="min-h-screen flex p-5 justify-center">
+    <div className={`min-h-screen flex p-5 justify-center ${bg}  `}>
       <div className="flex flex-col justify-between w-[45%]  p-5 m-1">
         <div className="mt-10 ml-5">
           {user?.image && (
@@ -88,23 +106,60 @@ export default function Handle({ params }: any) {
           )}
           <div className="">
             <p className="text-4xl font-extrabold my-5">{user?.name}</p>
-            <p className="text-lg w-[80%]">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Molestiae et iste optio sed laboriosam alias. Hic quisquam, ex
-              iusto cum reprehenderit incidunt quas?
-            </p>
+            {!bioactive && <p className="text-lg w-[80%]">{user?.bio}</p>}
+            {bioactive && (
+              <div className="">
+                <textarea
+                  onChange={(e) => {
+                    setBio(e.target.value);
+                  }}
+                  className="border w-fit rounded-lg p-2"
+                  name="bio"
+                  id="bio"
+                  rows={5}
+                  cols={50}
+                >
+                  {user?.bio}
+                </textarea>
+                <br></br>
+              </div>
+            )}
+
+            {useremail && (
+              <Button
+                className="mt-5 mr-2  hover:bg-red-800 transition-all duration-300"
+                onClick={() => {
+                  if (bioactive) {
+                    setBioActive(false);
+                  } else {
+                    setBioActive(true);
+                  }
+                }}
+              >
+                {bioactive ? "cancel" : "edit"}
+              </Button>
+            )}
+
+            {bioactive && (
+              <Button
+                className="mt-5 bg-sky-600 hover:bg-sky-800 transition-all duration-300"
+                onClick={updateBioHandler}
+              >
+                save
+              </Button>
+            )}
           </div>
         </div>
-        <div className="flex  p-1 shadow-lg border w-fit rounded-lg items-center">
+        <div className="flex  p-1 bg-slate-100 shadow-lg border w-fit rounded-lg items-center">
           <Link
             href="/"
-            className="m-1 flex justify-center items-center w-10 h-10 border shadow-lg rounded-lg hover:bg-sky-700 transition-all duration-300"
+            className="m-1 border-slate-500 flex justify-center items-center w-10 h-10 border shadow-lg rounded-lg hover:bg-sky-700 transition-all duration-300"
           >
             <Image src={Merilink} width={30} height={30} alt="" />
           </Link>
 
           <div className="h-10 w-[1px] mx-2 bg-slate-400 rounded-full"></div>
-          <p className="mr-2 text-slate-500">Meril.ink</p>
+          <p className="mr-2 text-slate-700">Meril.ink</p>
         </div>
       </div>
       <div className=" w-[55%] flex flex-wrap p-2 m-1">
@@ -288,86 +343,38 @@ export default function Handle({ params }: any) {
           />
         )}
       </div>
-      {/* <div className=" h-14 absolute bg-slate-100 bottom-10 rounded-lg flex p-1 shadow-lg border w-fit  items-center ">
-        <div className="m-1 flex justify-center items-center w-10 h-10 border shadow-lg rounded-lg hover:bg-slate-300 transition-all duration-500">
-          <svg
-            className="w-8"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 21 21"
-          >
-            <path
-              fill="none"
-              stroke="#64758B"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="m9.5 7.5l1-1a2.828 2.828 0 1 1 4 4l-1 1m-3 3l-1 1a2.828 2.828 0 1 1-4-4l1-1m1 3l5-5"
-            />
-          </svg>
-        </div>
-        <div className="m-1 flex justify-center items-center w-10 h-10 border shadow-lg rounded-lg hover:bg-slate-300 transition-all duration-500">
-          <svg
-            className="w-8"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 21 21"
-          >
-            <path
-              fill="none"
-              stroke="#64758B"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="m9.5 7.5l1-1a2.828 2.828 0 1 1 4 4l-1 1m-3 3l-1 1a2.828 2.828 0 1 1-4-4l1-1m1 3l5-5"
-            />
-          </svg>
-        </div>
-        <div className="m-1 flex justify-center items-center w-10 h-10 border shadow-lg rounded-lg hover:bg-slate-300 transition-all duration-500">
-          <svg
-            className="w-8"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 21 21"
-          >
-            <path
-              fill="none"
-              stroke="#64758B"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="m9.5 7.5l1-1a2.828 2.828 0 1 1 4 4l-1 1m-3 3l-1 1a2.828 2.828 0 1 1-4-4l1-1m1 3l5-5"
-            />
-          </svg>
-        </div>
-
-        <div className="h-10 w-[1px] mx-2 bg-slate-400 rounded-full"></div>
-
-        <div className="m-1 flex justify-center items-center w-10 h-10 border shadow-lg rounded-full hover:bg-slate-300 transition-all duration-500">
-          <svg
-            className="w-8"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 21 21"
-          >
-            <path
-              fill="none"
-              stroke="#64758B"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="m9.5 7.5l1-1a2.828 2.828 0 1 1 4 4l-1 1m-3 3l-1 1a2.828 2.828 0 1 1-4-4l1-1m1 3l5-5"
-            />
-          </svg>
-        </div>
-        <div className="m-1 flex justify-center items-center w-10 h-10 border shadow-lg rounded-full hover:bg-blue-300 transition-all duration-500">
-          <svg
-            className="w-8"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 21 21"
-          >
-            <path
-              fill="none"
-              stroke="#64758B"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="m9.5 7.5l1-1a2.828 2.828 0 1 1 4 4l-1 1m-3 3l-1 1a2.828 2.828 0 1 1-4-4l1-1m1 3l5-5"
-            />
-          </svg>
-        </div>
-      </div> */}
+      <div className=" h-14 absolute bg-slate-100 bottom-10 rounded-lg flex p-1 shadow-lg border w-fit  items-center ">
+        <div
+          onClick={() => {
+            setBg("bg-gradient-to-r from-[#FFF3B1] via-[#FFD0D3] to-[#FFACF5]");
+          }}
+          className="m-1 border-slate-500 flex justify-center items-center w-10 h-10 border shadow-lg rounded-lg hover:rotate-180 transition-all duration-500 bg-gradient-to-r from-[#FFF3B1] via-[#FFD0D3] to-[#FFACF5]"
+        ></div>
+        <div
+          onClick={() => {
+            setBg("bg-gradient-to-r from-[#8954FB] via-[#4887B3] to-[#06BA6A]");
+          }}
+          className="m-1 border-slate-500 flex justify-center items-center w-10 h-10 border shadow-lg rounded-lg hover:rotate-180 transition-all duration-500 bg-gradient-to-r from-[#8954FB] via-[#4887B3] to-[#06BA6A]"
+        ></div>
+        <div
+          onClick={() => {
+            setBg("bg-gradient-to-r from-[#2695bd] via-[#4abcde] to-[#9bebee]");
+          }}
+          className="m-1 border-slate-500 flex justify-center items-center w-10 h-10 border shadow-lg rounded-lg hover:rotate-180 transition-all duration-500 bg-gradient-to-r from-[#2695bd] via-[#4abcde] to-[#9bebee] "
+        ></div>
+        <div
+          onClick={() => {
+            setBg("bg-amber-100");
+          }}
+          className="m-1 border-slate-500 flex justify-center items-center w-10 h-10 border shadow-lg rounded-lg hover:rotate-180 transition-all duration-500 bg-amber-100"
+        ></div>
+        <div
+          onClick={() => {
+            setBg("bg-indigo-400");
+          }}
+          className="m-1 border-slate-500 flex justify-center items-center w-10 h-10 border shadow-lg rounded-lg hover:rotate-180 transition-all duration-500 bg-indigo-400"
+        ></div>
+      </div>
     </div>
   );
 }

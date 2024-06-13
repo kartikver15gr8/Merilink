@@ -5,10 +5,38 @@ import { Button } from "./ui/button";
 import Link from "next/link";
 import Reveal from "./Reveal";
 import { useSession } from "next-auth/react";
+import { useEffect, useState } from "react";
+import { UserType } from "@/lib/types";
+import axios from "axios";
+import { toast } from "sonner";
 
 export default function Maintitle() {
+  const [userdetails, setUserDetails] = useState<UserType | null>(null);
+
+  const getUser = async () => {
+    try {
+      const response = await axios.get("http://localhost:3000/api/getme");
+      console.log(response.data);
+      setUserDetails(response.data);
+
+      setUserDetails(response.data);
+
+      return response.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getUser();
+  }, []);
+
   const session = useSession();
   const user = session.data?.user?.name;
+  if (!user) {
+    toast("Sign in to explore all features");
+  }
+
   return (
     <div className=" w-[50%] z-40">
       <div className="flex flex-col justify-center items-center mt-32">
@@ -31,22 +59,31 @@ export default function Maintitle() {
       </div>
 
       <div className="flex flex-col  items-center">
-        <Link href="/createhandle">
-          <Button className="text-white font-bold text-lg w-72 h-14 rounded-xl hover:scale-105 transition-all duration-300">
-            Create your Merilink
-          </Button>
-        </Link>
+        {user && (
+          <div>
+            <p className="my-4 text-lg hover:scale-110 translate-all duration-300">
+              Welcome back {user} 👋🏼
+            </p>
+          </div>
+        )}
+        {userdetails?.profilehandle && (
+          <Link href={`/${userdetails.profilehandle}`}>
+            <Button className="text-white font-bold text-lg w-72 h-14 rounded-xl hover:scale-105 transition-all duration-300">
+              Check your Meril.ink
+            </Button>
+          </Link>
+        )}
+        {!userdetails?.profilehandle && (
+          <Link href="/createhandle">
+            <Button className="text-white font-bold text-lg w-72 h-14 rounded-xl hover:scale-105 transition-all duration-300">
+              Create your Meril.ink
+            </Button>
+          </Link>
+        )}
         {!user && (
           <Link href="/login">
             <p className="my-4 text-lg hover:scale-110 translate-all duration-300">
-              login
-            </p>
-          </Link>
-        )}
-        {user && (
-          <Link href="/login">
-            <p className="my-4 text-lg hover:scale-110 translate-all duration-300">
-              Welcome back {user} 👋🏼
+              Sign in
             </p>
           </Link>
         )}

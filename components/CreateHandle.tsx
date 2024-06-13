@@ -9,8 +9,17 @@ import Link from "next/link";
 import { toast } from "sonner";
 import axios from "axios";
 import { redirect } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 export default function CreateHandle() {
+  const session = useSession();
+
+  const useremail = session.data?.user?.email;
+
+  if (!useremail) {
+    redirect("/");
+  }
+
   const [hidden, setHidden] = useState("hidden");
   const [handle, setHandle] = useState("");
   const [isCreated, setIsCreated] = useState(false);
