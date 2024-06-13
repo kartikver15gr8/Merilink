@@ -12,38 +12,7 @@ import SocialCard from "@/components/SocialCard";
 import Link from "next/link";
 import React from "react";
 import { toast } from "sonner";
-
-type UserType = {
-  id: string;
-  emailVerified: Date | null;
-  image: string | null;
-  createdAt: Date;
-  updatedAt: Date;
-  email: string;
-  password: string | null;
-  name: string | null;
-  avatar: string | null;
-  profilehandle: string | null;
-  bio: string | null;
-};
-
-type LinksType = {
-  figma: string | null;
-  github: string | null;
-  gumroad: string | null;
-  hashnode: string | null;
-  id: 1;
-  instagram: string | null;
-  linkedin: string | null;
-  medium: string | null;
-  producthunt: string | null;
-  substack: string | null;
-  twitch: string | null;
-  twitter: string | null;
-  userHandle: string | null;
-  userId: string;
-  youtube: string | null;
-};
+import { UserType, LinksType } from "@/lib/types";
 
 export default function Handle({ params }: any) {
   const [handle, setHandle] = useState(params.handle);
@@ -86,10 +55,7 @@ export default function Handle({ params }: any) {
     getUserHandleDetails();
   }, [handle]);
 
-  useEffect(() => {
-    console.log(`user: ${JSON.stringify(user)}`);
-    console.log(`userLinks: ${JSON.stringify(userLinks)}`);
-  }, [user, userLinks]);
+  useEffect(() => {}, [user, userLinks]);
 
   return (
     <div className={`min-h-screen flex p-5 justify-center ${bg}  `}>

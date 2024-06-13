@@ -9,6 +9,7 @@ export type UserType = {
   name: string | null;
   avatar: string | null;
   profilehandle: string | null;
+  bio: string | null;
 };
 
 export type LinksType = {
