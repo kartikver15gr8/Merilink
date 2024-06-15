@@ -43,7 +43,11 @@ export default function Links() {
 
   const getLinks = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/getlinks");
+      const apiUrl =
+        process.env.NODE_ENV === "development"
+          ? "http://localhost:3000/api/getlinks"
+          : "https://www.meril.ink/api/getlinks";
+      const response = await axios.get(apiUrl);
       console.log(response.data);
       // console.log(response.data.twitter);
 
@@ -62,7 +66,11 @@ export default function Links() {
 
   const addHandles = async () => {
     try {
-      const response = await axios.post("http://localhost:3000/api/addlinks", {
+      const apiUrl =
+        process.env.NODE_ENV === "development"
+          ? "http://localhost:3000/api/addlinks"
+          : "https://www.meril.ink/api/addlinks";
+      const response = await axios.post(apiUrl, {
         instagram: instagram,
         twitter: twitter,
         linkedin: linkedin,

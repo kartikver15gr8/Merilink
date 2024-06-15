@@ -15,7 +15,11 @@ export default function Maintitle() {
 
   const getUser = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/getme");
+      const apiUrl =
+        process.env.NODE_ENV === "development"
+          ? "http://localhost:3000/api/getme"
+          : "https://www.meril.ink/api/getme";
+      const response = await axios.get(apiUrl);
       console.log(response.data);
       setUserDetails(response.data);
 

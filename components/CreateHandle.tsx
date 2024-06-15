@@ -29,12 +29,13 @@ export default function CreateHandle() {
 
   const createhandle = async () => {
     try {
-      const response = await axios.post(
-        "http://localhost:3000/api/createhandle",
-        {
-          handle: handle,
-        }
-      );
+      const apiUrl =
+        process.env.NODE_ENV === "development"
+          ? "http://localhost:3000/api/createhandle"
+          : "https://www.meril.ink/api/createhandle";
+      const response = await axios.post(apiUrl, {
+        handle: handle,
+      });
       console.log(handle);
 
       console.log(response.data);
@@ -51,12 +52,13 @@ export default function CreateHandle() {
 
   const checkhandle = async () => {
     try {
-      const response = await axios.post(
-        "http://localhost:3000/api/checkhandle",
-        {
-          userhandle: handle,
-        }
-      );
+      const apiUrl =
+        process.env.NODE_ENV === "development"
+          ? "http://localhost:3000/api/checkhandle"
+          : "https://www.meril.ink/api/checkhandle";
+      const response = await axios.post(apiUrl, {
+        userhandle: handle,
+      });
 
       console.log(response.data);
       console.log(response.data.status);

@@ -25,7 +25,11 @@ export default function Handle({ params }: any) {
 
   const updateBioHandler = async () => {
     try {
-      const response = await axios.post("http://localhost:3000/api/updatebio", {
+      const apiUrl =
+        process.env.NODE_ENV === "development"
+          ? "http://localhost:3000/api/updatebio"
+          : "https://www.meril.ink/api/updatebio";
+      const response = await axios.post(apiUrl, {
         newBio: bio,
       });
       console.log(response.data);
@@ -42,9 +46,11 @@ export default function Handle({ params }: any) {
   useEffect(() => {
     const getUserHandleDetails = async () => {
       try {
-        const response = await axios.post(
-          `http://localhost:3000/api/gethandleinfo/?handle=${handle}`
-        );
+        const apiUrl =
+          process.env.NODE_ENV === "development"
+            ? `http://localhost:3000/api/gethandleinfo/?handle=${handle}`
+            : `https://www.meril.ink/api/gethandleinfo/?handle=${handle}`;
+        const response = await axios.post(apiUrl);
         setUser(response.data.user);
         setUserLinks(response.data.links);
       } catch (error) {
