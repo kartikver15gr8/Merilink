@@ -28,7 +28,7 @@ export default function Card({
 }) {
   return (
     <div
-      className={`${className} shadow-xl hover:scale-110 transition-all duration-300`}
+      className={`${className} shadow-xl hover:scale-110 transition-all duration-300 hidden sm:hidden md:flex lg:flex xl:flex 2xl:flex`}
     >
       <div className="">
         <div

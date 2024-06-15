@@ -1,13 +1,13 @@
 export default function FeaturedIn() {
   return (
-    <div className="flex flex-col p-5">
+    <div className="flex flex-col p-2 md:p-5">
       <div className="flex justify-center">
-        <p className="text-5xl font-extrabold">Featured in…</p>
+        <p className="text-2xl md:text-5xl font-extrabold">Featured in…</p>
       </div>
-      <div className="flex flex-wrap mt-5 justify-center">
-        <div className="w-44 h-16 bg-slate-300 rounded-xl mx-2 my-1 flex justify-center items-center hover:scale-110 transition-all duration-300">
+      <div className="flex flex-wrap mt-2 md:mt-5 justify-center">
+        <div className="w-32 md:w-44 h-12 md:h-16 bg-slate-300 rounded-xl mx-1 md:mx-2 my-1 flex justify-center items-center hover:scale-110 transition-all duration-300">
           <svg
-            className="w-10"
+            className="w-8 md:w-10"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -23,10 +23,10 @@ export default function FeaturedIn() {
             </g>
           </svg>
         </div>
-        <div className="w-44 h-16 bg-slate-300 rounded-xl mx-2 my-1 flex justify-center items-center hover:scale-110 transition-all duration-300">
+        <div className="w-32 md:w-44 h-12 md:h-16 bg-slate-300 rounded-xl mx-1 md:mx-2 my-1 flex justify-center items-center hover:scale-110 transition-all duration-300">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="w-10 "
+            className="w-8 md:w-10"
             viewBox="0 0 24 24"
           >
             <g
@@ -42,10 +42,10 @@ export default function FeaturedIn() {
             </g>
           </svg>
         </div>
-        <div className="w-44 h-16 bg-slate-300 rounded-xl mx-2 my-1 flex justify-center items-center hover:scale-110 transition-all duration-300">
+        <div className="w-32 md:w-44 h-12 md:h-16 bg-slate-300 rounded-xl mx-1 md:mx-2 my-1 flex justify-center items-center hover:scale-110 transition-all duration-300">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="w-10"
+            className="w-8 md:w-10"
             viewBox="0 0 512 512"
           >
             <path
@@ -54,10 +54,10 @@ export default function FeaturedIn() {
             />
           </svg>
         </div>
-        <div className="w-44 h-16 bg-slate-300 rounded-xl mx-2 my-1 flex justify-center items-center hover:scale-110 transition-all duration-300">
+        <div className="w-32 md:w-44 h-12 md:h-16 bg-slate-300 rounded-xl mx-1 md:mx-2 my-1 flex justify-center items-center hover:scale-110 transition-all duration-300">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="w-10"
+            className="w-8 md:w-10"
             viewBox="0 0 24 24"
           >
             <g
