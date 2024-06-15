@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 
-const TITLE =
-  "Meril.ink - Your personal page to show everything you are and create.";
+const TITLE = "Meril.ink - Your personal page to show everything you are.";
 const DESCRIPTION =
   "A Link in bio, but rich and beautiful, share your links globally with everyone, no need to have a portfolio website, you have Meril.ink";
 
