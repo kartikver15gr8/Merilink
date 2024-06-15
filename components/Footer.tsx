@@ -26,14 +26,14 @@ export default function Footer() {
           Download Brand Assets
         </p>
       </div>
-      <div className="mb-20">
+      {/* <div className="mb-20">
         <Image
           src="https://global-uploads.webflow.com/6335b33630f88833a92915fc/63ee477e4688e939cf07c4c3_phbadge.svg"
           height={200}
           width={200}
           alt=""
         />
-      </div>
+      </div> */}
       <div className="h-1 w-[80%] bg-slate-300 mt-10"></div>
       <div className="h-20 flex justify-center items-center">
         <p>© 2024 Meril.ink pvt ltd | All Rights Reserved</p>
