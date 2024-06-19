@@ -98,7 +98,8 @@ export default function Links() {
         twitch: twitch,
       });
       console.log(response.data);
-      return response.data;
+      window.location.href = "/";
+      // return response.data;
     } catch (error) {
       return error;
     }
@@ -110,7 +111,7 @@ export default function Links() {
         <p className="mt-20 text-2xl font-bold w-96 mb-10">
           Now, lets add your social media accounts to your page.
         </p>
-        <div className="flex flex-col overflow-auto overflow-y-scroll h-[62vh] scrollbar-hide">
+        <div className="flex flex-col shadow-lg overflow-auto overflow-y-scroll h-[62vh] scrollbar-hide">
           <CardInput
             imgURL="https://imgs.search.brave.com/elUwmwX2czWW05Hr_wFE1tLydj5NG9Lae-KKMPDJhM0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi81LzUzL1hf/bG9nb18yMDIzX29y/aWdpbmFsLnN2Zy82/NDBweC1YX2xvZ29f/MjAyM19vcmlnaW5h/bC5zdmcucG5n"
             setValue={setTwitter}
@@ -187,8 +188,11 @@ export default function Links() {
           />
         </div>
 
-        <Button onClick={addHandles} className="my-3 rounded-lg">
-          Create
+        <Button
+          onClick={addHandles}
+          className="my-5 shadow-lg rounded-lg hover:scale-105 transition-all duration-300"
+        >
+          Save
         </Button>
       </div>
     </div>
