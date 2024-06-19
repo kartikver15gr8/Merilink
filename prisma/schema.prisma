@@ -36,18 +36,18 @@ model Links {
   user        User    @relation(fields: [userId], references: [id])
   userId      String  @unique
   userHandle  String? @unique
-  instagram   String? @unique
-  twitter     String? @unique
-  linkedin    String? @unique
-  github      String? @unique
-  youtube     String? @unique
-  figma       String? @unique
-  hashnode    String? @unique
-  medium      String? @unique
-  producthunt String? @unique
-  gumroad     String? @unique
-  substack    String? @unique
-  twitch      String? @unique
+  instagram   String?
+  twitter     String?
+  linkedin    String?
+  github      String?
+  youtube     String?
+  figma       String?
+  hashnode    String?
+  medium      String?
+  producthunt String?
+  gumroad     String?
+  substack    String?
+  twitch      String?
 }
 
 model Account {

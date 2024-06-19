@@ -25,4 +25,6 @@ export async function GET(req: NextRequest) {
       }
     }
   }
+  // return if the links are not present
+  return Response.json({ msg: "No links" });
 }
