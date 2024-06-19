@@ -4,24 +4,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { useEffect, useState } from "react";
 import axios from "axios";
-
-type LinksType = {
-  figma: string | null;
-  github: string | null;
-  gumroad: string | null;
-  hashnode: string | null;
-  id: 1;
-  instagram: string | null;
-  linkedin: string | null;
-  medium: string | null;
-  producthunt: string | null;
-  substack: string | null;
-  twitch: string | null;
-  twitter: string | null;
-  userHandle: string | null;
-  userId: string;
-  youtube: string | null;
-};
+import { LinksType } from "@/lib/types";
 
 export default function Links() {
   const [instagram, setInstagram] = useState("");

@@ -30,9 +30,9 @@ export async function POST(req: NextRequest) {
     },
   });
 
-  if (!links) {
-    return NextResponse.json({ error: "Links not found" }, { status: 404 });
-  }
+  // if (!links) {
+  //   return NextResponse.json({ error: "Links not found" }, { status: 404 });
+  // }
 
   return NextResponse.json({ user, links });
 }

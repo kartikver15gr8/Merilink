@@ -4,6 +4,7 @@ import { prisma } from "@/db";
 
 export async function POST(req: NextRequest) {
   const session = await getServerSession();
+  const userEmail = session?.user?.email;
   const {
     instagram,
     twitter,
@@ -18,7 +19,7 @@ export async function POST(req: NextRequest) {
     substack,
     twitch,
   } = await req.json();
-  const userEmail = session?.user?.email;
+
   if (userEmail) {
     const user = await prisma.user.findFirst({
       where: {
