@@ -156,7 +156,7 @@ export default function Handle({ params }: any) {
             btnText="Follow"
             btnColor="bg-black"
             date=""
-            handle={`${userLinks?.twitter?.split(".com/")[1]}`}
+            handle={`${userLinks?.twitter?.split(".com/")[1]}` || ""}
             bottomImg=""
           />
         )}
@@ -170,7 +170,7 @@ export default function Handle({ params }: any) {
             btnText="Follow"
             btnColor="bg-black"
             date=""
-            handle={`${userLinks?.github?.split(".com/")[1]}`}
+            handle={`${userLinks?.github?.split(".com/")[1]}` || ""}
             bottomImg=""
           />
         )}
@@ -184,7 +184,7 @@ export default function Handle({ params }: any) {
             btnText="Connect"
             btnColor="bg-blue-700"
             date=""
-            handle={`${userLinks?.linkedin?.split(".com/in/")[1].slice(0, -1)}`}
+            handle={`${userLinks?.linkedin?.split(".com/in/")[1]}` || ""}
             bottomImg=""
           />
         )}
@@ -198,7 +198,7 @@ export default function Handle({ params }: any) {
             btnText="Connect"
             btnColor="bg-red-700"
             date=""
-            handle={`Instagram`}
+            handle={`${userLinks.instagram.split(".com/")[1]}` || ""}
             bottomImg=""
           />
         )}
@@ -212,7 +212,7 @@ export default function Handle({ params }: any) {
             btnText="Follow"
             btnColor="bg-blue-500"
             date=""
-            handle={`myfigma`}
+            handle={""}
             bottomImg=""
           />
         )}
@@ -226,7 +226,7 @@ export default function Handle({ params }: any) {
             btnText="Connect"
             btnColor="bg-violet-700"
             date=""
-            handle={`myTwitch`}
+            handle={`${userLinks.twitch.split(".com/")[1]}` || ""}
             bottomImg=""
           />
         )}
@@ -240,7 +240,7 @@ export default function Handle({ params }: any) {
             btnText="Check"
             btnColor="bg-slate-700"
             date=""
-            handle={`kartikey`}
+            handle={`${userLinks.medium.split(".com/")[1]}` || ""}
             bottomImg=""
           />
         )}
@@ -254,7 +254,7 @@ export default function Handle({ params }: any) {
             btnText="Connect"
             btnColor="bg-pink-700"
             date=""
-            handle={`myGumroad`}
+            handle={`${userLinks.gumroad.split(".com/")[1]}` || ""}
             bottomImg=""
           />
         )}
@@ -268,7 +268,7 @@ export default function Handle({ params }: any) {
             btnText="Follow"
             btnColor="bg-blue-700"
             date=""
-            handle={`${userLinks?.linkedin?.split(".com/in/")[1].slice(0, -1)}`}
+            handle={`${userLinks.hashnode.split(".com/")[1]}` || ""}
             bottomImg=""
           />
         )}
@@ -282,7 +282,7 @@ export default function Handle({ params }: any) {
             btnText="Connect"
             btnColor="bg-red-700"
             date=""
-            handle={`YouTube`}
+            handle={`${userLinks.youtube.split(".com/")[1]}` || ""}
             bottomImg=""
           />
         )}
@@ -296,7 +296,7 @@ export default function Handle({ params }: any) {
             btnText="Follow"
             btnColor="bg-orange-700"
             date=""
-            handle={`${userLinks?.linkedin?.split(".com/in/")[1].slice(0, -1)}`}
+            handle={`${userLinks.producthunt.split(".com/")[1]}` || ""}
             bottomImg=""
           />
         )}
@@ -310,7 +310,9 @@ export default function Handle({ params }: any) {
             btnText="Follow"
             btnColor="bg-orange-900"
             date=""
-            handle={`${userLinks?.linkedin?.split(".com/in/")[1].slice(0, -1)}`}
+            handle={
+              `${userLinks?.linkedin?.split(".com/in/")[1].slice(0, -1)}` || ""
+            }
             bottomImg=""
           />
         )}

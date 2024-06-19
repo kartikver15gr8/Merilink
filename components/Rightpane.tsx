@@ -3,7 +3,7 @@ import Reveal from "./Reveal";
 
 export default function Rightpane() {
   return (
-    <div className="p-4 w-[25%]">
+    <div className="p-4  w-[25%] hidden sm:hidden md:flex lg:flex xl:flex 2xl:flex">
       <div className="p-4 ">
         <Card
           className=" h-74 w-52 ml-24 -rotate-6 bg-orange-200  border-slate-200 border-[1px] rounded-xl p-3"

@@ -12,7 +12,7 @@ export default function Landing() {
   return (
     <Reveal>
       <div>
-        <div className="flex h-[100vh]">
+        <div className="flex justify-center h-[100vh]">
           <Leftpane />
           <Maintitle />
           <Rightpane />

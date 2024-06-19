@@ -20,7 +20,7 @@ export default function SocialCard({
   btnText: string;
   btnColor: string;
   date: string;
-  handle: string;
+  handle?: string;
   className: string;
   imgBg: string;
   bottomImg?: string;

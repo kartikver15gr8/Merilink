@@ -2,7 +2,7 @@ import Card from "./Card";
 
 export default function Leftpane() {
   return (
-    <div className="p-4 flex flex-col w-[25%]">
+    <div className="p-4 hidden sm:hidden md:flex lg:flex xl:flex 2xl:flex flex-col w-[25%]">
       <Card
         className=" h-40 ml-24 w-40 rotate-6 bg-slate-200  border-slate-200 border-[1px] rounded-xl p-3"
         imgUrl="https://imgs.search.brave.com/elUwmwX2czWW05Hr_wFE1tLydj5NG9Lae-KKMPDJhM0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi81LzUzL1hf/bG9nb18yMDIzX29y/aWdpbmFsLnN2Zy82/NDBweC1YX2xvZ29f/MjAyM19vcmlnaW5h/bC5zdmcucG5n"
