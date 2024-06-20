@@ -67,7 +67,7 @@ export default function Handle({ params }: any) {
 
   return (
     <div
-      className={`min-h-screen flex flex-col md:flex-row p-5 justify-center ${bg}`}
+      className={`min-h-screen flex flex-col md:flex-row p-5 justify-center  ${bg}`}
     >
       <div className="flex flex-col justify-between w-full md:w-[45%] p-5 m-1">
         <div className="mt-10 ml-5">
@@ -328,7 +328,7 @@ export default function Handle({ params }: any) {
           />
         )}
       </div>
-      {/* <div className=" h-14 absolute bg-slate-100 bottom-10 rounded-lg flex p-1 shadow-lg border w-fit  items-center ">
+      <div className="h-14 sticky sm:sticky md:absolute lg:absolute xl:absolute 2xl:absolute bg-slate-100 bottom-10 rounded-lg flex p-1 shadow-lg border w-fit   items-center ">
         <div
           onClick={() => {
             setBg("bg-gradient-to-r from-[#FFF3B1] via-[#FFD0D3] to-[#FFACF5]");
@@ -359,7 +359,7 @@ export default function Handle({ params }: any) {
           }}
           className="m-1 border-slate-500 flex justify-center items-center w-10 h-10 border shadow-lg rounded-lg hover:rotate-180 transition-all duration-500 bg-indigo-400"
         ></div>
-      </div> */}
+      </div>
     </div>
   );
 }
