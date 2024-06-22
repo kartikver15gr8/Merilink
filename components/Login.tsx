@@ -19,22 +19,26 @@ export default function Login() {
     signIn("github");
   };
 
+  const signInGoogle = () => {
+    signIn("google");
+  };
+
   if (user) {
     redirect("/");
   }
 
   return (
-    <div className="flex p-10 h-[100vh]">
-      <div className="w-[50%] p-10 flex flex-col justify-center">
+    <div className="flex p-1 sm:p-1 md:p-5 lg:p-10 xl:p-10 2xl:p-10 h-[100vh]">
+      <div className="w-[100%] z-50 sm:w-[100%] md:w-[50%] lg:w-[50%] xl:w-[50%] 2xl:w-[50%]  p-10  flex flex-col justify-center items-center sm:items-center md:items-start lg:items-start xl:items-start 2xl:items-start">
         <Link href="/" className="mb-10">
           <Logo />
         </Link>
-        <div className="w-[450px]">
-          <div className="mb-20">
-            <p className="text-3xl font-bold my-2">Log in to Merilink</p>
+        <div className="w-[450px] ">
+          <div className="mb-10">
+            <p className="text-3xl font-bold my-2">Sign in to Merilink</p>
             <p className="text-slate-600 text-lg">Good to have you back!</p>
           </div>
-          <div className="">
+          {/* <div className="">
             <div className="flex">
               <Input
                 className="rounded-lg mr-2 h-14 w-[49%] bg-slate-200"
@@ -60,9 +64,9 @@ export default function Login() {
             >
               Login
             </Button>
-          </div>
-          <p className="font-bold">OR</p>
-          <div className="my-3 flex">
+          </div> */}
+          {/* <p className="font-bold">OR</p> */}
+          <div className="flex  my-4 ">
             <Button onClick={signInGitHub} className="h-12 w-full my-1 mr-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +80,7 @@ export default function Login() {
               </svg>
               <p>Sign in with GitHub</p>
             </Button>
-            <Button className="h-12 w-full my-1 ml-1">
+            <Button onClick={signInGoogle} className="h-12 w-full my-1 ml-1">
               <svg
                 className="mx-2 w-6"
                 xmlns="http://www.w3.org/2000/svg"
@@ -105,12 +109,11 @@ export default function Login() {
               <p>Sign in with Google</p>
             </Button>
           </div>
-          <Link href="/signup">
-            <p className="text-slate-600 mt-3">or Sign up</p>
-          </Link>
+
+          <p className="text-slate-600 mt-3">seamless one click sign in!</p>
         </div>
       </div>
-      <div className="w-[50%] justify-center items-center flex p-10 ">
+      <div className="w-[50%] z-10 hidden sm:hidden md:hidden lg:flex xl:flex 2xl:flex justify-center items-center  p-10 ">
         <div className="">
           <Card
             className=" h-74 w-52 ml-24 -rotate-6 bg-red-200  border-slate-200 border-[1px] rounded-xl p-3"

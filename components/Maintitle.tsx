@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { UserType } from "@/lib/types";
 import axios from "axios";
 import { toast } from "sonner";
+import { signOut } from "next-auth/react";
 
 export default function Maintitle() {
   const [userdetails, setUserDetails] = useState<UserType | null>(null);
@@ -29,6 +30,10 @@ export default function Maintitle() {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const handleSignOut = () => {
+    signOut();
   };
 
   useEffect(() => {
@@ -81,11 +86,19 @@ export default function Maintitle() {
           </div>
         )}
         {userdetails?.profilehandle && (
-          <Link href={`/${userdetails.profilehandle}`}>
-            <Button className="text-white font-bold text-sm sm:text-sm md:text-lg lg:text-lg xl:text-lg 2xl:text-lg  w-44 h-12 sm:w-44 sm:h-12 md:w-72 md:h-14 lg:w-72 lg:h-14 xl:w-72 xl:h-14 2xl:w-72 2xl:h-14   rounded-xl hover:scale-105 transition-all duration-300">
-              Check your Meril.ink
+          <div className="flex flex-col justify-center ">
+            <Link href={`/${userdetails.profilehandle}`}>
+              <Button className="text-white my-1  font-bold text-sm sm:text-sm md:text-lg lg:text-lg xl:text-lg 2xl:text-lg  w-44 h-12 sm:w-44 sm:h-12 md:w-72 md:h-14 lg:w-72 lg:h-14 xl:w-72 xl:h-14 2xl:w-72 2xl:h-14   rounded-xl hover:scale-105 transition-all duration-300">
+                Check your Meril.ink
+              </Button>
+            </Link>
+            <Button
+              onClick={handleSignOut}
+              className=" my-1 bg-transparent text-black font-bold text-sm sm:text-sm md:text-lg lg:text-lg xl:text-lg 2xl:text-lg  w-44 h-12 sm:w-44 sm:h-12 md:w-72 md:h-14 lg:w-72 lg:h-14 xl:w-72 xl:h-14 2xl:w-72 2xl:h-14   rounded-xl hover:text-red-400 hover:bg-transparent transition-all duration-300  "
+            >
+              Logout
             </Button>
-          </Link>
+          </div>
         )}
         {!userdetails?.profilehandle && (
           <Link href="/createhandle">
