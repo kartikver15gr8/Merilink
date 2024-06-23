@@ -2,14 +2,12 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import Card from "@/components/Card";
 import Link from "next/link";
-import Image from "next/image";
 import Logo from "@/components/Logo";
 import { signIn, useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
 import { toast } from "sonner";
+import Card from "@/components/Card";
 
 export default function Login() {
   const session = useSession();
@@ -28,49 +26,25 @@ export default function Login() {
   }
 
   return (
-    <div className="flex p-1 sm:p-1 md:p-5 lg:p-10 xl:p-10 2xl:p-10 h-[100vh]">
-      <div className="w-[100%] z-50 sm:w-[100%] md:w-[50%] lg:w-[50%] xl:w-[50%] 2xl:w-[50%]  p-10  flex flex-col justify-center items-center sm:items-center md:items-start lg:items-start xl:items-start 2xl:items-start">
+    <div className="flex flex-col lg:flex-row min-h-screen p-4 sm:p-6 md:p-8 lg:p-10">
+      <div className="w-full lg:w-1/2 flex flex-col justify-center items-center lg:items-start mb-8 lg:mb-0">
         <Link href="/" className="mb-10">
           <Logo />
         </Link>
-        <div className="w-[450px] ">
+        <div className="w-full max-w-md">
           <div className="mb-10">
-            <p className="text-3xl font-bold my-2">Sign in to Merilink</p>
-            <p className="text-slate-600 text-lg">Good to have you back!</p>
-          </div>
-          {/* <div className="">
-            <div className="flex">
-              <Input
-                className="rounded-lg mr-2 h-14 w-[49%] bg-slate-200"
-                placeholder="Email"
-                type="text"
-              ></Input>
-              <Input
-                className="rounded-lg mr-2 h-14 w-[49%] bg-slate-200"
-                placeholder="Password"
-                type="password"
-              ></Input>
-            </div>
-            <p className="text-blue-800 text-sm underline mt-2 mb-5">
-              Reset Password
+            <p className="text-2xl sm:text-3xl font-bold my-2">
+              Sign in to Merilink
             </p>
-            <Button
-              onClick={() => {
-                toast.message("magiclink is under development", {
-                  description: "Sign in with either GitHub or Google",
-                });
-              }}
-              className="w-full h-12 my-3"
-            >
-              Login
-            </Button>
-          </div> */}
-          {/* <p className="font-bold">OR</p> */}
-          <div className="flex  my-4 ">
-            <Button onClick={signInGitHub} className="h-12 w-full my-1 mr-1">
+            <p className="text-slate-600 text-base sm:text-lg">
+              Good to have you back!
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Button onClick={signInGitHub} className="h-12 w-full">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="mx-2 w-6"
+                className="mr-2 w-6"
                 viewBox="0 0 16 16"
               >
                 <path
@@ -80,9 +54,9 @@ export default function Login() {
               </svg>
               <p>Sign in with GitHub</p>
             </Button>
-            <Button onClick={signInGoogle} className="h-12 w-full my-1 ml-1">
+            <Button onClick={signInGoogle} className="h-12 w-full">
               <svg
-                className="mx-2 w-6"
+                className="mr-2 w-6"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
               >
@@ -109,12 +83,13 @@ export default function Login() {
               <p>Sign in with Google</p>
             </Button>
           </div>
-
-          <p className="text-slate-600 mt-3">seamless one click sign in!</p>
+          <p className="text-slate-600 mt-3 text-center sm:text-left">
+            seamless one click sign in!
+          </p>
         </div>
       </div>
-      <div className="w-[50%] z-10 hidden sm:hidden md:hidden lg:flex xl:flex 2xl:flex justify-center items-center  p-10 ">
-        <div className="">
+      <div className="w-full lg:w-1/2 hidden lg:flex justify-center items-center">
+        <div className="relative max-w-2xl">
           <Card
             className=" h-74 w-52 ml-24 -rotate-6 bg-red-200  border-slate-200 border-[1px] rounded-xl p-3"
             imgUrl="https://imgs.search.brave.com/tjVOIzREE3KGD4zc-p2E1LFIPqq4ExC8i0piom9epBA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzYwL2Qx/LzYxLzYwZDE2MTMx/YjdmNTI2YWMwYmY0/ZDFjZDE4OTg5MmFj/LmpwZw"
