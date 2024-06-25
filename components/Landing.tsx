@@ -1,28 +1,28 @@
-import Maintitle from "./Maintitle";
-import Leftpane from "./Leftpane";
-import Rightpane from "./Rightpane";
-import Reveal from "./Reveal";
-import DemoBanner from "./DemoBanner";
-import ReviewsTile from "./ReviewsTile";
-import Footer from "./Footer";
-import Features from "./Features";
-import FeaturedIn from "./FeaturedIn";
+import DemoBanner from './DemoBanner';
+import FeaturedIn from './FeaturedIn';
+import Features from './Features';
+import Footer from './Footer';
+import Leftpane from './Leftpane';
+import Maintitle from './Maintitle';
+import Reveal from './Reveal';
+import ReviewsTile from './ReviewsTile';
+import Rightpane from './Rightpane';
 
 export default function Landing() {
-  return (
-    <Reveal>
-      <div>
-        <div className="flex justify-center h-[100vh]">
-          <Leftpane />
-          <Maintitle />
-          <Rightpane />
-        </div>
-        <DemoBanner />
-        <Features />
-        <FeaturedIn />
-        <ReviewsTile />
-        <Footer />
-      </div>
-    </Reveal>
-  );
+    return (
+        <Reveal>
+            <div>
+                <div className="flex justify-center h-[100vh]">
+                    <Leftpane />
+                    <Maintitle />
+                    <Rightpane />
+                </div>
+                <DemoBanner />
+                <Features />
+                <FeaturedIn />
+                <ReviewsTile />
+                <Footer />
+            </div>
+        </Reveal>
+    );
 }
