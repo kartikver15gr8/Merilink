@@ -102,7 +102,7 @@ export default function Links() {
             value={twitter}
           />
           <CardInput
-            imgURL="https://imgs.search.brave.com/0WgEuQBRctTMyQC3wTDDrG3UzaEmC3u4Z862Ym2ZLXU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzkxL09jdGljb25z/LW1hcmstZ2l0aHVi/LnN2Zw.svg"
+            imgURL="https://imgs.search.brave.com/ZZVkPN-_cIr6ZXIsJ1d4-RndUMqDkIMUu_gRiPCf69I/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9naXRo/dWIuZ2l0aHViYXNz/ZXRzLmNvbS9hc3Nl/dHMvR2l0SHViLU1h/cmstZWEyOTcxY2Vl/Nzk5LnBuZw"
             setValue={setGitHub}
             placeholder={userLinks?.github || "https://…"}
             value={github}
@@ -140,7 +140,7 @@ export default function Links() {
             value={gumroad}
           />
           <CardInput
-            imgURL="https://imgs.search.brave.com/2HhRpdDKVswhS02oyyFfKYZkLiRm4HyUISKzIXPO724/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4u/d29ybGR2ZWN0b3Js/b2dvLmNvbS9sb2dv/cy9wcm9kdWN0LWh1/bnQuc3Zn.svg"
+            imgURL="https://imgs.search.brave.com/Zbz4zopGfgGu5X7jIvlkyDeQxwa4MxMTRUjjXKJ2MJw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9ld2Vi/aW5hci5jb20vaHVi/ZnMvTG9nb3MvUHJv/ZHVjdCUyMEh1bnQu/c3Zn"
             setValue={setProductHunt}
             placeholder={userLinks?.producthunt || "https://…"}
             value={producthunt}
@@ -152,7 +152,7 @@ export default function Links() {
             value={instagram}
           />
           <CardInput
-            imgURL="https://imgs.search.brave.com/vW62EhmdMfk7HjQovK_01sgTw5y8V14RQQYtRb1jONQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy8z/LzMzL0ZpZ21hLWxv/Z28uc3Zn.svg"
+            imgURL="https://imgs.search.brave.com/fmwxbC9hikx9fboTHZYNVR-4XR2LNiFiwluGLtDLcrs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/ZHJpYmJibGUuY29t/L3VzZXJ1cGxvYWQv/OTQwODk2Ny9maWxl/L29yaWdpbmFsLWIz/ZWRkMWY2MjU0YjVm/YjhmMzVhN2E0MDQ4/Y2E2MGQ0LnBuZz9y/ZXNpemU9NDAweDA"
             setValue={setFigma}
             placeholder={userLinks?.figma || "https://…"}
             value={figma}
