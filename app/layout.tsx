@@ -8,11 +8,6 @@ import { siteConfig } from "@/config/site-config";
 
 const inter = Inter({ subsets: ["latin"] });
 
-// export const metadata: Metadata = {
-//   title: "Meril.ink",
-//   description: "Easy share your social handles",
-// };
-
 export const metadata: Metadata = siteConfig;
 
 export default function RootLayout({
