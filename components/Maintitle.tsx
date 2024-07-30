@@ -2,7 +2,6 @@
 import { UserType } from '@/lib/types';
 import Merilink from '@/public/Merilink.png';
 import axios from 'axios';
-import { ArrowUpRight } from 'lucide-react';
 import { signOut, useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -95,19 +94,11 @@ export default function Maintitle() {
                         </Button>
                     </div>
                 )}
-                {!userdetails?.profilehandle && (
-                    <Link href="/createhandle">
+                {!user && (
+                    <Link href="/login">
                         <Button className="text-white font-bold text-sm sm:text-sm md:text-lg lg:text-lg xl:text-lg 2xl:text-lg  w-44 h-12 sm:w-44 sm:h-12 md:w-72 md:h-14 lg:w-72 lg:h-14 xl:w-72 xl:h-14 2xl:w-72 2xl:h-14   rounded-xl hover:scale-105 transition-all duration-300">
                             Create your Meril.ink
                         </Button>
-                    </Link>
-                )}
-                {!user && (
-                    <Link href="/login">
-                        <p className=" flex flex-row items-center justify-start gap-0.5 my-4 text-sm sm:text-sm md:text-lg lg:text-lg xl:text-lg 2xl:text-lg hover:scale-110 translate-all duration-300 hover:gap-1 ">
-                            Sign in
-                            <ArrowUpRight className="w-4" />
-                        </p>
                     </Link>
                 )}
             </div>
