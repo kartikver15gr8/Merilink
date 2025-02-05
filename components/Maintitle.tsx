@@ -78,7 +78,7 @@ export default function Maintitle() {
             </p>
           </div>
         )}
-        {userdetails && (
+        {userdetails && user && (
           <div className="flex flex-col justify-center ">
             <Link
               href={
