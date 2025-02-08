@@ -1,6 +1,7 @@
 "use client";
 import SocialCard from "@/components/SocialCard";
 import { Button } from "@/components/ui/button";
+import { iconsArray } from "@/lib/svgLinkArr";
 import { LinksType, UserType } from "@/lib/types";
 import Merilink from "@/public/Merilink.png";
 import axios from "axios";
@@ -8,6 +9,8 @@ import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+
+const iconsSvgs = iconsArray;
 
 export default function Handle({ params }: any) {
   const [handle, setHandle] = useState(params.handle);
@@ -154,7 +157,7 @@ export default function Handle({ params }: any) {
           <SocialCard
             socialHandle={userLinks?.twitter}
             className="h-40 mx-2 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 bg-slate-200 border-slate-200 border-[1px] rounded-xl p-3 my-2"
-            cardIcon="https://imgs.search.brave.com/elUwmwX2czWW05Hr_wFE1tLydj5NG9Lae-KKMPDJhM0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi81LzUzL1hf/bG9nb18yMDIzX29y/aWdpbmFsLnN2Zy82/NDBweC1YX2xvZ29f/MjAyM19vcmlnaW5h/bC5zdmcucG5n"
+            cardIcon={iconsSvgs.X}
             imgBg="bg-white"
             title=" Twitter"
             btnText="Follow"
@@ -168,7 +171,7 @@ export default function Handle({ params }: any) {
           <SocialCard
             socialHandle={userLinks.github}
             className="h-40 mx-2 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 bg-slate-400 border-slate-200 border-[1px] rounded-xl p-3 my-2"
-            cardIcon="https://imgs.search.brave.com/ZZVkPN-_cIr6ZXIsJ1d4-RndUMqDkIMUu_gRiPCf69I/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9naXRo/dWIuZ2l0aHViYXNz/ZXRzLmNvbS9hc3Nl/dHMvR2l0SHViLU1h/cmstZWEyOTcxY2Vl/Nzk5LnBuZw"
+            cardIcon={iconsSvgs.Github}
             imgBg="bg-white"
             title=" GitHub"
             btnText="Follow"
@@ -182,7 +185,7 @@ export default function Handle({ params }: any) {
           <SocialCard
             socialHandle={userLinks.linkedin}
             className="h-40 mx-2 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 bg-blue-200 border-slate-200 border-[1px] rounded-xl p-3 my-2"
-            cardIcon="https://imgs.search.brave.com/uGDtHsxME6trYi3Pg1IQoYBs0ZNStLg4fOwcz9gYrwo/rs:fit:860:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy9j/L2NhL0xpbmtlZElu/X2xvZ29faW5pdGlh/bHMucG5n"
+            cardIcon={iconsSvgs.LinkedIn}
             imgBg="bg-white"
             title=" LinkedIn"
             btnText="Connect"
@@ -196,7 +199,7 @@ export default function Handle({ params }: any) {
           <SocialCard
             socialHandle={userLinks.instagram}
             className="h-40 mx-2 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 bg-pink-300 border-slate-200 border-[1px] rounded-xl p-3 my-2"
-            cardIcon="https://imgs.search.brave.com/FmUZXvAg5PpCriub4NHVAjY6hRUWXwVRkivCyUpMac0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA1LzMyLzIwLzAz/LzM2MF9GXzUzMjIw/MDM4Ml9LTDZDRGFa/Y3VzaVpPOW5PNVRE/N2hXUUV6OEtvNkJa/Qi5qcGc"
+            cardIcon={iconsSvgs.Instagram}
             imgBg="bg-white"
             title=" Instagram"
             btnText="Connect"
@@ -210,7 +213,7 @@ export default function Handle({ params }: any) {
           <SocialCard
             socialHandle={userLinks.figma}
             className="h-40 mx-2 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 bg-blue-200 border-slate-200 border-[1px] rounded-xl p-3 my-2"
-            cardIcon="https://imgs.search.brave.com/fmwxbC9hikx9fboTHZYNVR-4XR2LNiFiwluGLtDLcrs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/ZHJpYmJibGUuY29t/L3VzZXJ1cGxvYWQv/OTQwODk2Ny9maWxl/L29yaWdpbmFsLWIz/ZWRkMWY2MjU0YjVm/YjhmMzVhN2E0MDQ4/Y2E2MGQ0LnBuZz9y/ZXNpemU9NDAweDA"
+            cardIcon={iconsSvgs.Figma}
             imgBg="bg-white"
             title=" Figma"
             btnText="Follow"
@@ -224,7 +227,7 @@ export default function Handle({ params }: any) {
           <SocialCard
             socialHandle={userLinks.twitch}
             className="h-40 mx-2 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 bg-violet-200 border-slate-200 border-[1px] rounded-xl p-3 my-2"
-            cardIcon="https://imgs.search.brave.com/HaoOZpxMxVaE1iMr6c5fWSEvOAur9f0saa6nhJcmdwU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9wbmdp/bWcuY29tL3VwbG9h/ZHMvdHdpdGNoL3R3/aXRjaF9QTkcyNy5w/bmc"
+            cardIcon={iconsSvgs.Twitch}
             imgBg="bg-white"
             title=" Twitch"
             btnText="Connect"
@@ -238,7 +241,7 @@ export default function Handle({ params }: any) {
           <SocialCard
             socialHandle={userLinks.medium}
             className="h-40 mx-2 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 bg-slate-300 border-slate-200 border-[1px] rounded-xl p-3 my-2"
-            cardIcon="https://imgs.search.brave.com/i6ZZ0a2Oh27m7u0oUcIGvv9esf5xvqKboNrp8ofk1PQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9taXJv/Lm1lZGl1bS5jb20v/djIvMSpzSGh0WWhh/Q2UyVWMzSVUwSWdL/d0lRLnBuZw"
+            cardIcon={iconsSvgs.Medium}
             imgBg="bg-white"
             title="Medium"
             btnText="Check"
@@ -252,7 +255,7 @@ export default function Handle({ params }: any) {
           <SocialCard
             socialHandle={userLinks.gumroad}
             className="h-40 mx-2 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 bg-pink-200 border-slate-200 border-[1px] rounded-xl p-3 my-2"
-            cardIcon="https://imgs.search.brave.com/zgZ-NMCvxGO98tFUk3cdR57_9WR2P_s-WsMdftEN2P8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4u/aWNvbnNjb3V0LmNv/bS9pY29uL2ZyZWUv/cG5nLTI1Ni9mcmVl/LWd1bXJvYWQtNzY2/MjI4OS02Mjk3MjI1/LnBuZz9mPXdlYnAm/dz0yNTY"
+            cardIcon={iconsSvgs.Gumroad}
             imgBg="bg-white"
             title=" Gumroad"
             btnText="Connect"
@@ -266,7 +269,7 @@ export default function Handle({ params }: any) {
           <SocialCard
             socialHandle={userLinks.hashnode}
             className="h-40 mx-2 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 bg-slate-100 border-slate-200 border-[1px] rounded-xl p-3 my-2"
-            cardIcon="https://imgs.search.brave.com/lkG6CsVp-z9pcLTFLHPpVOZXr5LvUbZ7qYCxtD0F-Ls/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9yZXMu/Y2xvdWRpbmFyeS5j/b20vcHJhY3RpY2Fs/ZGV2L2ltYWdlL2Zl/dGNoL3MtLTdTSDBR/QmVuLS0vY19saW1p/dCxmX2F1dG8sZmxf/cHJvZ3Jlc3NpdmUs/cV9hdXRvLHdfODAw/L2h0dHBzOi8vY2Ru/Lmhhc2hub2RlLmNv/bS9yZXMvaGFzaG5v/ZGUvaW1hZ2UvdXBs/b2FkL3YxNjQ3MTUy/NzA5MzI0L0JncUhF/aVI4dy5wbmc"
+            cardIcon={iconsSvgs.Hashnode}
             imgBg="bg-white"
             title=" Hashnode"
             btnText="Follow"
@@ -280,7 +283,7 @@ export default function Handle({ params }: any) {
           <SocialCard
             socialHandle={userLinks.youtube}
             className="h-40 mx-2 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 bg-red-200 border-slate-200 border-[1px] rounded-xl p-3 my-2"
-            cardIcon="https://imgs.search.brave.com/byFHBr1DdRRfFH5DP9fZwjkEKZ1JRCf9kAwcSSa758M/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA1LzQ4LzUxLzU0/LzM2MF9GXzU0ODUx/NTQ3N19YemZjd3A1/ZmwxZmZoYmM1c08z/a0hrd3JMSFFRVW1N/OS5qcGc"
+            cardIcon={iconsSvgs.YouTube}
             imgBg="bg-white"
             title=" YouTube"
             btnText="Connect"
@@ -294,7 +297,7 @@ export default function Handle({ params }: any) {
           <SocialCard
             socialHandle={userLinks.producthunt}
             className="h-40 mx-2 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 bg-orange-300 border-slate-200 border-[1px] rounded-xl p-3 my-2"
-            cardIcon="https://imgs.search.brave.com/Zbz4zopGfgGu5X7jIvlkyDeQxwa4MxMTRUjjXKJ2MJw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9ld2Vi/aW5hci5jb20vaHVi/ZnMvTG9nb3MvUHJv/ZHVjdCUyMEh1bnQu/c3Zn"
+            cardIcon={iconsSvgs.ProductHunt}
             imgBg="bg-white"
             title=" Product Hunt"
             btnText="Follow"
@@ -308,7 +311,7 @@ export default function Handle({ params }: any) {
           <SocialCard
             socialHandle={userLinks.substack}
             className="h-40 mx-2 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 bg-orange-200 border-slate-200 border-[1px] rounded-xl p-3 my-2"
-            cardIcon="https://imgs.search.brave.com/rxX_fCW9OAIzMipnQzBbJ1zBRuCrYnOj1dS3MaeezE0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jYW1v/LmdpdGh1YnVzZXJj/b250ZW50LmNvbS8w/N2M5NDVhYjk4Y2Rh/YzEzZTNiZjJmNzAx/MWU4YTkwNTllZDk3/M2M3YzAzNjg5ZTRl/M2VjNjFjZDJhZjRl/YjdkLzY4NzQ3NDcw/NzMzYTJmMmY3Mzc1/NjI3Mzc0NjE2MzZi/MmU2MzZmNmQyZjY5/NmQ2NzJmNzM3NTYy/NzM3NDYxNjM2YjJl/NzA2ZTY3"
+            cardIcon={iconsSvgs.Substack}
             imgBg="bg-white"
             title=" Substack"
             btnText="Follow"

@@ -10,7 +10,7 @@ import MediumIcon from "@/public/icons/Medium.webp";
 import ProductHuntIcon from "@/public/icons/productHunt.webp";
 import InstagramIcon from "@/public/icons/insta.webp";
 import YouTubeIcon from "@/public/icons/youtube.webp";
-import XIcon from "@/public/icons/X.webp";
+import XIcon from "@/public/icons/x.webp";
 
 export const iconsArray = {
   YouTube: YouTubeIcon,
