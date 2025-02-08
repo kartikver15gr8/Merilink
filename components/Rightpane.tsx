@@ -1,5 +1,8 @@
+import { iconsArray } from "@/lib/svgLinkArr";
 import Card from "./Card";
 import Reveal from "./Reveal";
+
+const iconsSvgs = iconsArray;
 
 export default function Rightpane() {
   return (
@@ -7,7 +10,7 @@ export default function Rightpane() {
       <div className="p-4 ">
         <Card
           className=" h-74 w-52 ml-24 -rotate-6 bg-orange-200  border-slate-200 border-[1px] rounded-xl p-3"
-          imgUrl="https://imgs.search.brave.com/rxX_fCW9OAIzMipnQzBbJ1zBRuCrYnOj1dS3MaeezE0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jYW1v/LmdpdGh1YnVzZXJj/b250ZW50LmNvbS8w/N2M5NDVhYjk4Y2Rh/YzEzZTNiZjJmNzAx/MWU4YTkwNTllZDk3/M2M3YzAzNjg5ZTRl/M2VjNjFjZDJhZjRl/YjdkLzY4NzQ3NDcw/NzMzYTJmMmY3Mzc1/NjI3Mzc0NjE2MzZi/MmU2MzZmNmQyZjY5/NmQ2NzJmNzM3NTYy/NzM3NDYxNjM2YjJl/NzA2ZTY3"
+          imgUrl={iconsSvgs.Substack}
           imgBg="bg-white"
           title="Substack"
           btnText="subscribe"
@@ -19,7 +22,7 @@ export default function Rightpane() {
           bottomImgH={50}
         />
         <Card
-          imgUrl="https://imgs.search.brave.com/ZZVkPN-_cIr6ZXIsJ1d4-RndUMqDkIMUu_gRiPCf69I/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9naXRo/dWIuZ2l0aHViYXNz/ZXRzLmNvbS9hc3Nl/dHMvR2l0SHViLU1h/cmstZWEyOTcxY2Vl/Nzk5LnBuZw"
+          imgUrl={iconsSvgs.Github}
           className="h-40 w-80 rotate-12 bg-slate-300  border-slate-200 border-[1px] rounded-xl p-3"
           imgBg="bg-white"
           title="GitHub"

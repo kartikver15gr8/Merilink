@@ -66,7 +66,7 @@ export default function Handle({ params }: any) {
         <div className="mt-10 ml-5">
           {user?.image && (
             <Image
-              className="rounded-full "
+              className="rounded-full border-2 border-[#cccaca]"
               src={user?.image}
               alt=""
               width={200}
@@ -131,7 +131,7 @@ export default function Handle({ params }: any) {
             <Image src={Merilink} width={30} height={30} alt="" />
           </Link>
 
-          <div className="h-10 w-[1px] mx-2 bg-slate-400 rounded-full"></div>
+          <div className="h-10 w-[1px] mx-2 bg-[#F7F7F7] rounded-full"></div>
           <p className="mr-2 text-slate-700">Meril.ink</p>
         </div>
       </div>
@@ -139,7 +139,7 @@ export default function Handle({ params }: any) {
         {userName == user?.name && (
           <Link
             href="/addlinks"
-            className="hidden sm:hidden md:flex lg:flex xl:flex 2xl:flex absolute right-10 bottom-10 p-1 shadow-lg border-2 hover:bg-sky-700 transition-all duration-300 border-sky-600 w-fit rounded-full items-center"
+            className="hidden sm:hidden md:flex lg:flex xl:flex 2xl:flex absolute right-10 bottom-10 p-1 shadow-lg border-2 hover:bg-sky-700 transition-all duration-300 border-[#c1bfbf] w-fit rounded-full items-center"
           >
             <Image
               src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3Cpath fill='%23474747' d='M20.71 7.04c-.34.34-.67.67-.68 1c-.03.32.31.65.63.96c.48.5.95.95.93 1.44s-.53 1-1.04 1.5l-4.13 4.14L15 14.66l4.25-4.24l-.96-.96l-1.42 1.41l-3.75-3.75l3.84-3.83c.39-.39 1.04-.39 1.41 0l2.34 2.34c.39.37.39 1.02 0 1.41M3 17.25l9.56-9.57l3.75 3.75L6.75 21H3z'/%3E%3C/svg%3E"
